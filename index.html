@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flowbyte Labs | Automatizaciones y APIs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563EB;
+      --secondary: #38BDF8;
+      --accent: #14B8A6;
+      --text-dark: #0F172A;
+      --bg-light: #F9FAFB;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+    header {
+      background: white;
+      padding: 1.2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+    nav a {
+      color: var(--text-dark);
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 500;
+    }
+    .hero {
+      text-align: center;
+      padding: 6rem 2rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+    }
+    .hero h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .hero .btn {
+      background: white;
+      color: var(--primary);
+      padding: 0.8rem 1.8rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    section {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+    h3 {
+      font-family: 'Poppins', sans-serif;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .service {
+      background: white;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--text-dark);
+      color: white;
+      font-size: 0.9rem;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Flowbyte Labs</h1>
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<section class="hero" id="inicio">
+  <h2>Automatizá tu flujo. Escalá tus resultados.</h2>
+  <p>Soluciones inteligentes en automatización, integraciones y APIs.</p>
+  <a href="#contacto" class="btn">Contactanos</a>
+</section>
+
+<section id="about">
+  <h3>Sobre Flowbyte Labs</h3>
+  <p>
+    En Flowbyte Labs ayudamos a empresas y desarrolladores a optimizar sus procesos a través de automatizaciones con <strong>n8n</strong>, 
+    integraciones con APIs y desarrollo a medida. Nuestro objetivo es que tus sistemas fluyan sin fricción.
+  </p>
+</section>
+
+<section id="servicios">
+  <h3>Servicios</h3>
+  <div class="services">
+    <div class="service">
+      <h4>Automatizaciones n8n</h4>
+      <p>Diseño e implementación de flujos inteligentes para optimizar tus procesos internos.</p>
+    </div>
+    <div class="service">
+      <h4>Integraciones API</h4>
+      <p>Conectamos tus sistemas con APIs externas y desarrollamos integraciones personalizadas.</p>
+    </div>
+    <div class="service">
+      <h4>Consultoría Técnica</h4>
+      <p>Asesoría experta para automatizar operaciones y mejorar la eficiencia de tus proyectos.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <h3>Contacto</h3>
+  <p>¿Querés automatizar tus procesos o conectar tus sistemas?</p>
+  <p><strong>Escribinos a:</strong> <a href="mailto:flowbyte.labs@gmail.com">flowbyte.labs@gmail.com</a></p>
+</section>
+
+<footer>
+  © 2025 Flowbyte Labs. Todos los derechos reservados.
+</footer>
+
+</body>
+</html>
