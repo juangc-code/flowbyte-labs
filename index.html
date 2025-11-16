@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Flowbyte Automations | Automatizaciones y APIs</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
   <style>
     :root {
       --primary: #2563EB;
@@ -94,8 +96,63 @@
       font-size: 0.9rem;
       margin-top: 4rem;
     }
+
+    .projects-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(0, 255, 200, 0.4);
+}
+
+.swiper {
+  width: 100%;
+  padding-bottom: 60px;
+}
+
+.project-card {
+  background: #111; 
+  border-radius: 18px;
+  padding: 20px;
+  color: #fff;
+  text-align: left;
+  box-shadow: 0 0 15px rgba(0, 255, 200, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(0, 255, 200, 0.35);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #00e5c0; /* neon accent */
+}
+
+.swiper-pagination-bullet {
+  background: #00e5c0;
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
   </style>
 </head>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <body>
 
 <header>
@@ -139,6 +196,45 @@
   </div>
 </section>
 
+<section id="trabajos" class="projects-section">
+  <h2 class="section-title">Nuestros trabajos</h2>
+
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+
+      <!-- SLIDE 1 -->
+      <div class="swiper-slide project-card">
+        <img src="resources/img/tg_admin.png" alt="Administrador de grupos" />
+        <h3>Administrador de grupos</h3>
+        <p>Automatización completa de flujos internos en grupos como Telegram con integraciones de pago.</p>
+      </div>
+
+      <!-- SLIDE 2 -->
+      <div class="swiper-slide project-card">
+        <img src="images/project2.png" alt="Proyecto 2" />
+        <h3>Proyecto 2</h3>
+        <p>Dashboard de métricas en tiempo real para equipos operativos.</p>
+      </div>
+
+      <!-- SLIDE 3 -->
+      <div class="swiper-slide project-card">
+        <img src="images/project3.png" alt="Proyecto 3" />
+        <h3>Proyecto 3</h3>
+        <p>Sistema BFF optimizado con caching inteligente.</p>
+      </div>
+
+    </div>
+
+    <!-- Navigation buttons -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
+    <!-- Dots -->
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+
 <section id="contacto">
   <h3>Contacto</h3>
   <p>¿Querés automatizar tus procesos o conectar tus sistemas?</p>
@@ -150,4 +246,26 @@
 </footer>
 
 </body>
+<script>
+  const swiper = new Swiper(".mySwiper", {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 30,
+
+    breakpoints: {
+      768: { slidesPerView: 2 },
+      1200: { slidesPerView: 3 }
+    },
+
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    }
+  });
+</script>
+
 </html>
