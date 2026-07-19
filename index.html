@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Flowbyte Automations | Automatizaciones y APIs</title>
+  <title data-i18n="page_title">Flowbyte Automations | Automatizaciones para tu negocio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <style>
@@ -37,11 +37,28 @@
       font-size: 1.5rem;
       color: var(--primary);
     }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
     nav a {
       color: var(--text-dark);
       text-decoration: none;
-      margin-left: 1.5rem;
       font-weight: 500;
+    }
+    .lang-toggle {
+      background: var(--bg-light);
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 0.4rem 0.8rem;
+      font-weight: 600;
+      color: var(--primary);
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .lang-toggle:hover {
+      background: #eef2ff;
     }
     .hero {
       text-align: center;
@@ -58,7 +75,9 @@
       font-size: 1.2rem;
       margin-bottom: 2rem;
     }
-    .hero .btn {
+    .hero .btn,
+    .contact-btn {
+      display: inline-block;
       background: white;
       color: var(--primary);
       padding: 0.8rem 1.8rem;
@@ -96,194 +115,70 @@
       margin-top: 4rem;
     }
     .projects-section {
-  padding: 80px 20px;
-  text-align: center;
-}
-.section-title {
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 40px;
-  color: #ffffff;
-  text-shadow: 0 0 10px rgba(0, 255, 200, 0.4);
-}
-.swiper {
-  width: 100%;
-  padding-bottom: 60px;
-}
-.project-card {
-  background: var(--text-dark);
-  border-radius: 18px;
-  padding: 20px;
-  color: #fff;
-  text-align: left;
-  box-shadow: 0 0 15px rgba(0, 255, 200, 0.15);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.project-card img {
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 15px;
-}
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 25px rgba(0, 255, 200, 0.35);
-}
-.swiper-button-next,
-.swiper-button-prev {
-  color: #00e5c0; /* neon accent */
-}
-.swiper-pagination-bullet {
-  background: #00e5c0;
-  opacity: 0.5;
-}
-.swiper-pagination-bullet-active {
-  opacity: 1;
-}
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .section-title {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 40px;
+      color: #ffffff;
+      text-shadow: 0 0 10px rgba(0, 255, 200, 0.4);
+    }
+    .swiper {
+      width: 100%;
+      padding-bottom: 60px;
+    }
+    .project-card {
+      background: var(--text-dark);
+      border-radius: 18px;
+      padding: 30px 20px;
+      color: #fff;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0, 255, 200, 0.15);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .project-icon {
+      font-size: 48px;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .project-card h3 {
+      color: #fff;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    .project-card p {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+    }
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 25px rgba(0, 255, 200, 0.35);
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #00e5c0;
+    }
+    .swiper-pagination-bullet {
+      background: #00e5c0;
+      opacity: 0.5;
+    }
+    .swiper-pagination-bullet-active {
+      opacity: 1;
+    }
 
-/* FORM SECTION — Flowbyte style */
-#demo {
-  margin-top: 4rem;
-  padding: 3rem 2rem;
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-}
-
-#n8n-form {
-  background: var(--bg-light);
-  padding: 2.5rem;
-  border-radius: 14px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-/* Form header */
-#n8n-form h1 {
-  font-family: "Poppins", sans-serif;
-  color: var(--primary);
-  font-size: 1.9rem;
-  margin-bottom: 0.5rem;
-}
-
-#n8n-form p {
-  color: var(--text-dark);
-  margin-bottom: 2rem;
-  font-size: 1rem;
-}
-
-/* Layout */
-.inputs-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-/* Form groups */
-.form-group {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-}
-
-.form-label {
-  font-weight: 600;
-  margin-bottom: 0.4rem;
-  color: var(--text-dark);
-}
-
-/* Inputs */
-.form-input {
-  padding: 0.85rem 1rem;
-  border-radius: 10px;
-  border: 1px solid #d5d5d5;
-  font-size: 1rem;
-  background: white;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.form-input:focus {
-  outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 6px rgba(37, 99, 235, 0.3);
-}
-
-/* Textarea */
-textarea.form-input {
-  min-height: 120px;
-  resize: vertical;
-}
-
-/* Error messages */
-.error-hidden {
-  display: none;
-}
-
-[class^="error-field"] {
-  font-size: 0.85rem;
-  color: #dc2626;
-  margin-top: 0.3rem;
-}
-
-/* Submit Button */
-#submit-btn {
-  margin-top: 1.5rem;
-  width: 100%;
-  border: none;
-  padding: 1rem;
-  font-size: 1.1rem;
-  border-radius: 10px;
-  background: var(--primary);
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-#submit-btn:hover {
-  background: #1d4ed8;
-}
-
-.modal-bg {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.65);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-
-.modal-bg.hidden {
-  display: none;
-}
-
-.modal-content {
-  background: var(--bg-light);
-  width: 80%;
-  max-width: 650px;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 40px rgba(0,0,0,0.4);
-}
-
-.close-btn {
-  color: var(--text-dark);
-  float: right;
-  font-size: 30px;
-  cursor: pointer;
-}
-
-/* Remove all spacing inside iframe */
-#n8nForm {
-  display: block;
-  width: 100%;
-  border: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden; /* this is important */
-}
-
+    #contacto {
+      text-align: center;
+      background: white;
+      border-radius: 16px;
+      padding: 3rem 2rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
   </style>
 </head>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -291,61 +186,97 @@ textarea.form-input {
 <header>
   <h1>Flowbyte Automations</h1>
   <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#servicios">Servicios</a>
-    <a href="#contacto">Contacto</a>
+    <a href="#inicio" data-i18n="nav_inicio">Inicio</a>
+    <a href="#servicios" data-i18n="nav_servicios">Servicios</a>
+    <a href="#contacto" data-i18n="nav_contacto">Contacto</a>
+    <button class="lang-toggle" id="langToggle" aria-label="Cambiar idioma">EN</button>
   </nav>
 </header>
 <section class="hero" id="inicio">
-  <h2>Automatizá tu flujo. Escalá tus resultados.</h2>
-  <p>Soluciones inteligentes en automatización, integraciones y APIs.</p>
-  <a href="#contacto" class="btn">Contactanos</a>
+  <h2 data-i18n="hero_title">Automatizá tu flujo. Escalá tus resultados.</h2>
+  <p data-i18n="hero_subtitle">Eliminamos el trabajo repetitivo para que tu equipo se concentre en lo que importa.</p>
+  <a href="#contacto" class="btn" data-i18n="hero_cta">Contactanos</a>
 </section>
 <section id="about">
-  <h3>Sobre Flowbyte Automations</h3>
-  <p>
-    En Flowbyte Automations ayudamos a empresas y desarrolladores a optimizar sus procesos a través de automatizaciones con <strong>n8n</strong>,
-    integraciones con APIs y desarrollo a medida. Nuestro objetivo es que tus sistemas fluyan sin fricción.
+  <h3 data-i18n="about_title">Sobre Flowbyte Automations</h3>
+  <p data-i18n="about_text">
+    En Flowbyte Automations ayudamos a empresas a dejar atrás el trabajo repetitivo. Diseñamos soluciones a medida que conectan tus sistemas, organizan tu operación y mejoran la experiencia de tus clientes.
   </p>
 </section>
 <section id="servicios">
-  <h3>Servicios</h3>
+  <h3 data-i18n="services_title">Servicios</h3>
   <div class="services">
     <div class="service">
-      <h4>Automatizaciones n8n</h4>
-      <p>Diseño e implementación de flujos inteligentes para optimizar tus procesos internos.</p>
+      <h4 data-i18n="service_1_title">Automatización de procesos</h4>
+      <p data-i18n="service_1_desc">Diseñamos flujos que reducen tareas manuales y hacen que tu equipo sea más productivo.</p>
     </div>
     <div class="service">
-      <h4>Integraciones API</h4>
-      <p>Conectamos tus sistemas con APIs externas y desarrollamos integraciones personalizadas.</p>
+      <h4 data-i18n="service_2_title">Integraciones de sistemas</h4>
+      <p data-i18n="service_2_desc">Conectamos las herramientas que ya usás para que la información fluya sola.</p>
     </div>
     <div class="service">
-      <h4>Consultoría Técnica</h4>
-      <p>Asesoría experta para automatizar operaciones y mejorar la eficiencia de tus proyectos.</p>
+      <h4 data-i18n="service_3_title">Consultoría de operaciones</h4>
+      <p data-i18n="service_3_desc">Te ayudamos a identificar qué procesos conviene automatizar primero.</p>
     </div>
   </div>
 </section>
-<section id="trabajos">
-  <h3>Nuestros trabajos</h3>
+<section id="trabajos" class="projects-section">
+  <h3 class="section-title" data-i18n="portfolio_title">Nuestros trabajos</h3>
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
       <!-- SLIDE 1 -->
       <div class="swiper-slide project-card">
-        <img src="resources/img/tg_admin.png" alt="Administrador de grupos" />
-        <h3>Administrador de grupos</h3>
-        <p>Automatización completa de flujos internos en grupos como Telegram con integraciones de pago.</p>
+        <div class="project-icon">🤖</div>
+        <h3 data-i18n="work_1_title">Atención al cliente con IA</h3>
+        <p data-i18n="work_1_desc">Respuestas automáticas las 24 horas para consultas frecuentes.</p>
       </div>
       <!-- SLIDE 2 -->
       <div class="swiper-slide project-card">
-        <img src="resources/img/integrations.png" alt="integrations" />
-        <h3>Integraciones inteligentes</h3>
-        <p>Automatizaciones con integraciones de APIs, Bases de Datos, aplicaciones en la nube y más.</p>
+        <div class="project-icon">📅</div>
+        <h3 data-i18n="work_2_title">Reserva de turnos</h3>
+        <p data-i18n="work_2_desc">Tus clientes reservan solos sin llamadas ni mensajes de por medio.</p>
       </div>
       <!-- SLIDE 3 -->
       <div class="swiper-slide project-card">
-        <img src="resources/img/ai-agent.png" alt="ai-agent" />
-        <h3>Agentes AI</h3>
-        <p>Implementación de agentes AI usando modelos en la nube y/o local ajustado a la necesidad del cliente.</p>
+        <div class="project-icon">✉️</div>
+        <h3 data-i18n="work_3_title">Emails automáticos</h3>
+        <p data-i18n="work_3_desc">Envíos personalizados de bienvenida, seguimiento y recordatorios.</p>
+      </div>
+      <!-- SLIDE 4 -->
+      <div class="swiper-slide project-card">
+        <div class="project-icon">🔄</div>
+        <h3 data-i18n="work_4_title">Gestión de suscripciones</h3>
+        <p data-i18n="work_4_desc">Cobros recurrentes, altas, bajas y recordatorios sin intervención manual.</p>
+      </div>
+      <!-- SLIDE 5 -->
+      <div class="swiper-slide project-card">
+        <div class="project-icon">📦</div>
+        <h3 data-i18n="work_5_title">Sincronización de stock</h3>
+        <p data-i18n="work_5_desc">Tu stock se actualiza solo entre tienda, depósito y canales de venta.</p>
+      </div>
+      <!-- SLIDE 6 -->
+      <div class="swiper-slide project-card">
+        <div class="project-icon">🎁</div>
+        <h3 data-i18n="work_6_title">Programa de fidelidad</h3>
+        <p data-i18n="work_6_desc">Puntos, recompensas y beneficios para que tus clientes vuelvan.</p>
+      </div>
+      <!-- SLIDE 7 -->
+      <div class="swiper-slide project-card">
+        <div class="project-icon">🍽️</div>
+        <h3 data-i18n="work_7_title">Reservas para restaurantes</h3>
+        <p data-i18n="work_7_desc">Mesas, horarios y confirmaciones gestionadas automáticamente.</p>
+      </div>
+      <!-- SLIDE 8 -->
+      <div class="swiper-slide project-card">
+        <div class="project-icon">👥</div>
+        <h3 data-i18n="work_8_title">Horarios de equipo</h3>
+        <p data-i18n="work_8_desc">Turnos, ausencias y recordatorios organizados sin planillas complejas.</p>
+      </div>
+      <!-- SLIDE 9 -->
+      <div class="swiper-slide project-card">
+        <div class="project-icon">⚡</div>
+        <h3 data-i18n="work_9_title">API impulsada por IA</h3>
+        <p data-i18n="work_9_desc">Conectamos tus datos con inteligencia para responder y actuar al instante.</p>
       </div>
     </div>
     <!-- Navigation buttons -->
@@ -355,33 +286,14 @@ textarea.form-input {
     <div class="swiper-pagination"></div>
   </div>
 </section>
-<section id="consulta">
-  <div id="n8n-form">
-      <h1>Dejanos tu consulta</h1>
-      <p style="white-space: pre-line">¿Querés automatizar tus procesos o conectar tus sistemas? Dejanos tu consulta y
-        enseguida nos ponemos en contacto contigo!</p>
-      <button class="btn" id="submit-btn" onclick="openFormModal()">
-        Consultar
-      </button>
-      <!-- Modal Background -->
-      <div id="formModal" class="modal-bg hidden">
-        <div class="modal-content">
-          <!-- Close Button -->
-          <span class="close-btn" onclick="closeFormModal()">&times;</span>
-          <!-- FORM iFrame -->
-          <iframe id="n8nForm" src="https://n8ntg.mycoolsetup.win/form/d31cc037-4b74-4345-a337-e57b4a7f5e45?minimal=1"
-            frameborder="0" style="width:100%; height:600px; border:none; border-radius:12px;">
-          </iframe>
-        </div>
-    </div>
-  </div>
-</section>
 <section id="contacto">
-  <h3>Contacto</h3>
-  <p><strong>También podés escribirnos a:</strong> <a href="mailto:flowbyte.labs@gmail.com">flowbyte.labs@gmail.com</a></p>
+  <h3 data-i18n="contact_title">Contacto</h3>
+  <p data-i18n="contact_text">¿Querés automatizar tus procesos? Escribinos y te respondemos a la brevedad.</p>
+  <a href="mailto:flowbyte.labs@gmail.com" class="contact-btn" data-i18n="contact_cta">Enviar consulta</a>
+  <p style="margin-top: 1rem;"><strong data-i18n="contact_email_label">También podés escribirnos a:</strong> <a href="mailto:flowbyte.labs@gmail.com">flowbyte.labs@gmail.com</a></p>
 </section>
 <footer>
-  © 2025 Flowbyte Automations. Todos los derechos reservados.
+  <span data-i18n="footer">© 2025 Flowbyte Automations. Todos los derechos reservados.</span>
 </footer>
 </body>
 <script>
@@ -402,35 +314,114 @@ textarea.form-input {
       prevEl: ".swiper-button-prev"
     }
   });
-  function openFormModal() {
-    document.getElementById("formModal").classList.remove("hidden");
-}
 
-function closeFormModal() {
-    document.getElementById("formModal").classList.add("hidden");
-    window.location.reload();
-}
-
-// Auto-resize iframe to fit n8n form perfectly
-function resizeIframe() {
-    const iframe = document.getElementById("n8nForm");
-    if (!iframe) return;
-
-    try {
-        const doc = iframe.contentDocument || iframe.contentWindow.document;
-        if (!doc) return;
-
-        const formHeight = doc.body.scrollHeight;
-        iframe.style.height = formHeight + "px";
-    } catch (e) {
-        console.warn("Cannot access iframe height due to cross-origin rules.");
+  const translations = {
+    es: {
+      page_title: "Flowbyte Automations | Automatizaciones para tu negocio",
+      nav_inicio: "Inicio",
+      nav_servicios: "Servicios",
+      nav_contacto: "Contacto",
+      hero_title: "Automatizá tu flujo. Escalá tus resultados.",
+      hero_subtitle: "Eliminamos el trabajo repetitivo para que tu equipo se concentre en lo que importa.",
+      hero_cta: "Contactanos",
+      about_title: "Sobre Flowbyte Automations",
+      about_text: "En Flowbyte Automations ayudamos a empresas a dejar atrás el trabajo repetitivo. Diseñamos soluciones a medida que conectan tus sistemas, organizan tu operación y mejoran la experiencia de tus clientes.",
+      services_title: "Servicios",
+      service_1_title: "Automatización de procesos",
+      service_1_desc: "Diseñamos flujos que reducen tareas manuales y hacen que tu equipo sea más productivo.",
+      service_2_title: "Integraciones de sistemas",
+      service_2_desc: "Conectamos las herramientas que ya usás para que la información fluya sola.",
+      service_3_title: "Consultoría de operaciones",
+      service_3_desc: "Te ayudamos a identificar qué procesos conviene automatizar primero.",
+      portfolio_title: "Nuestros trabajos",
+      work_1_title: "Atención al cliente con IA",
+      work_1_desc: "Respuestas automáticas las 24 horas para consultas frecuentes.",
+      work_2_title: "Reserva de turnos",
+      work_2_desc: "Tus clientes reservan solos sin llamadas ni mensajes de por medio.",
+      work_3_title: "Emails automáticos",
+      work_3_desc: "Envíos personalizados de bienvenida, seguimiento y recordatorios.",
+      work_4_title: "Gestión de suscripciones",
+      work_4_desc: "Cobros recurrentes, altas, bajas y recordatorios sin intervención manual.",
+      work_5_title: "Sincronización de stock",
+      work_5_desc: "Tu stock se actualiza solo entre tienda, depósito y canales de venta.",
+      work_6_title: "Programa de fidelidad",
+      work_6_desc: "Puntos, recompensas y beneficios para que tus clientes vuelvan.",
+      work_7_title: "Reservas para restaurantes",
+      work_7_desc: "Mesas, horarios y confirmaciones gestionadas automáticamente.",
+      work_8_title: "Horarios de equipo",
+      work_8_desc: "Turnos, ausencias y recordatorios organizados sin planillas complejas.",
+      work_9_title: "API impulsada por IA",
+      work_9_desc: "Conectamos tus datos con inteligencia para responder y actuar al instante.",
+      contact_title: "Contacto",
+      contact_text: "¿Querés automatizar tus procesos? Escribinos y te respondemos a la brevedad.",
+      contact_cta: "Enviar consulta",
+      contact_email_label: "También podés escribirnos a:",
+      footer: "© 2025 Flowbyte Automations. Todos los derechos reservados."
+    },
+    en: {
+      page_title: "Flowbyte Automations | Automations for your business",
+      nav_inicio: "Home",
+      nav_servicios: "Services",
+      nav_contacto: "Contact",
+      hero_title: "Automate your workflow. Scale your results.",
+      hero_subtitle: "We remove repetitive work so your team can focus on what matters.",
+      hero_cta: "Contact us",
+      about_title: "About Flowbyte Automations",
+      about_text: "At Flowbyte Automations we help businesses leave repetitive work behind. We design tailored solutions that connect your systems, organize your operations, and improve your customer experience.",
+      services_title: "Services",
+      service_1_title: "Process automation",
+      service_1_desc: "We design flows that cut manual tasks and make your team more productive.",
+      service_2_title: "System integrations",
+      service_2_desc: "We connect the tools you already use so information flows on its own.",
+      service_3_title: "Operations consulting",
+      service_3_desc: "We help you identify which processes to automate first.",
+      portfolio_title: "Our work",
+      work_1_title: "AI customer support",
+      work_1_desc: "Automatic 24/7 replies for common questions.",
+      work_2_title: "Appointment booking",
+      work_2_desc: "Your clients book on their own without calls or back-and-forth messages.",
+      work_3_title: "Email automation",
+      work_3_desc: "Personalized welcome, follow-up, and reminder emails.",
+      work_4_title: "Subscription management",
+      work_4_desc: "Recurring billing, sign-ups, cancellations, and reminders without manual work.",
+      work_5_title: "Inventory sync",
+      work_5_desc: "Your stock updates itself across store, warehouse, and sales channels.",
+      work_6_title: "Loyalty platform",
+      work_6_desc: "Points, rewards, and perks to keep your customers coming back.",
+      work_7_title: "Restaurant reservation",
+      work_7_desc: "Tables, times, and confirmations managed automatically.",
+      work_8_title: "Employee scheduling",
+      work_8_desc: "Shifts, absences, and reminders organized without complex spreadsheets.",
+      work_9_title: "AI-powered API",
+      work_9_desc: "We connect your data with intelligence to respond and act instantly.",
+      contact_title: "Contact",
+      contact_text: "Want to automate your processes? Write to us and we'll reply shortly.",
+      contact_cta: "Send inquiry",
+      contact_email_label: "You can also write us at:",
+      footer: "© 2025 Flowbyte Automations. All rights reserved."
     }
-}
+  };
 
-// Resize when iframe loads
-document.getElementById("n8nForm").addEventListener("load", resizeIframe);
+  const langToggle = document.getElementById("langToggle");
+  let currentLang = localStorage.getItem("flowbyte-lang") || "es";
 
-// Try resizing every 500ms for growing forms (dynamic validation/error messages)
-setInterval(resizeIframe, 500);
+  function applyLanguage(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      if (translations[lang][key]) {
+        el.textContent = translations[lang][key];
+      }
+    });
+    langToggle.textContent = lang === "es" ? "EN" : "ES";
+    localStorage.setItem("flowbyte-lang", lang);
+  }
+
+  langToggle.addEventListener("click", () => {
+    currentLang = currentLang === "es" ? "en" : "es";
+    applyLanguage(currentLang);
+  });
+
+  applyLanguage(currentLang);
 </script>
 </html>
