@@ -283,6 +283,10 @@
       padding: 0.5rem 0.25rem 3.5rem;
     }
     .swiper-slide { height: auto; }
+    .swiper-fade .swiper-slide {
+      transition-timing-function: var(--ease);
+      will-change: opacity;
+    }
     .project-card {
       height: 100%;
       min-height: 240px;
@@ -544,6 +548,18 @@
         <h3 data-i18n="work_9_title">API impulsada por IA</h3>
         <p data-i18n="work_9_desc">Conectamos tus datos con inteligencia para responder y actuar al instante.</p>
       </div>
+      <!-- SLIDE 10 -->
+      <div class="swiper-slide project-card">
+        <div class="project-icon">🖥</div>
+        <h3 data-i18n="work_10_title">Administración de servidores</h3>
+        <p data-i18n="work_10_desc">Configuramos tu servidor on-premise, VPS o Cloud.</p>
+      </div>
+      <!-- SLIDE 11 -->
+      <div class="swiper-slide project-card">
+        <div class="project-icon">⚙️</div>
+        <h3 data-i18n="work_11_title">CRM</h3>
+        <p data-i18n="work_11_desc">Diseñamos e implementamos tus CRM a tu medida.</p>
+      </div>     
     </div>
     <!-- Navigation buttons -->
     <div class="swiper-button-next"></div>
@@ -562,25 +578,69 @@
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-  const swiper = new Swiper(".mySwiper", {
-    loop: true,
-    grabCursor: true,
-    keyboard: { enabled: true },
-    slidesPerView: 1,
-    spaceBetween: 30,
-    breakpoints: {
-      768: { slidesPerView: 2 },
-      1200: { slidesPerView: 3 }
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev"
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function debounce(fn, wait) {
+    let t;
+    return function () {
+      clearTimeout(t);
+      t = setTimeout(fn, wait);
+    };
+  }
+
+  function createSwiperConfig() {
+    const isMobile = window.innerWidth < 768;
+    const baseConfig = {
+      loop: true,
+      grabCursor: true,
+      keyboard: { enabled: true },
+      slidesPerView: 1,
+      spaceBetween: 30,
+      breakpoints: {
+        768: { slidesPerView: 2 },
+        1200: { slidesPerView: 3 }
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      }
+    };
+
+    if (prefersReducedMotion) return baseConfig;
+
+    const autoplay = {
+      delay: 4000,
+      disableOnInteraction: true,
+      pauseOnMouseEnter: true
+    };
+
+    if (isMobile) {
+      return {
+        ...baseConfig,
+        effect: "fade",
+        fadeEffect: { crossFade: true },
+        speed: 600,
+        autoplay
+      };
     }
-  });
+
+    return {
+      ...baseConfig,
+      speed: 600,
+      autoplay
+    };
+  }
+
+  let swiper = new Swiper(".mySwiper", createSwiperConfig());
+
+  window.addEventListener("resize", debounce(() => {
+    swiper.destroy(true, true);
+    swiper = new Swiper(".mySwiper", createSwiperConfig());
+  }, 250));
 
   const translations = {
     es: {
@@ -619,6 +679,10 @@
       work_8_desc: "Turnos, ausencias y recordatorios organizados sin planillas complejas.",
       work_9_title: "API impulsada por IA",
       work_9_desc: "Conectamos tus datos con inteligencia para responder y actuar al instante.",
+      work_10_title: "Administración de servidores",
+      work_10_desc: "Configuramos tu servidor on-premise, VPS o Cloud.",
+      work_11_title: "CRM",
+      work_11_desc: "Diseñamos e implementamos tus CRM a tu medida.",
       contact_title: "Contacto",
       contact_text: "¿Querés automatizar tus procesos? Escribinos y te responderemos a la brevedad.",
       contact_cta: "Enviar consulta",
@@ -660,6 +724,10 @@
       work_8_desc: "Shifts, absences, and reminders organized without complex spreadsheets.",
       work_9_title: "AI-powered API",
       work_9_desc: "We connect your data with intelligence to respond and act instantly.",
+      work_10_title: "Server administration",
+      work_10_desc: "We configure your server on-premise, VPS or Cloud.",
+      work_11_title: "CRM",
+      work_11_desc: "We design and implement CRM according to your needs.",
       contact_title: "Contact",
       contact_text: "Want to automate your processes? Write to us and we'll reply shortly.",
       contact_cta: "Send inquiry",
